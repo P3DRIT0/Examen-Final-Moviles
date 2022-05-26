@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.examen_3eval.FirstFragment"
+        android:label="Biblio de Música"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.examen_3eval.SecondFragment"
+        android:label="Listado de álbumes"
+        tools:layout="@layout/fragment_second">
+        <argument
+            android:name="genero"
+            app:argType="com.example.examen_3eval.Genero" />
+        <action
+            android:id="@+id/action_SecondFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.examen_3eval.InfoFragment"
+        android:label="Información:"
+        tools:layout="@layout/fragment_info">
+        <argument
+            android:name="info"
+            app:argType="com.example.examen_3eval.Info" />
+    </fragment>
+</navigation>
